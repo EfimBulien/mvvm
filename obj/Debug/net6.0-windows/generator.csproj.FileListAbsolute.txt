@@ -1,0 +1,2 @@
+C:\Users\efimb\source\repos\generator\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\efimb\source\repos\generator\obj\Debug\net6.0-windows\generator_MarkupCompile.cache
