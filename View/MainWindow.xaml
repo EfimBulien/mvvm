@@ -1,0 +1,29 @@
+﻿<Window x:Class="generator.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="260">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Пройти тест" Foreground="White" Margin="10" 
+                VerticalAlignment="Center" HorizontalAlignment="Center" 
+                Command="{Binding PassCommand}" Grid.Row="0">
+        </Button>
+        <Button Content="Изменить тест"  Foreground="White" Margin="10" 
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                Command="{Binding RedactorCommand}" Grid.Row="1">
+        </Button>
+        <TextBox x:Name="PasswordTextBox" Margin="10" Grid.Row="2"
+                 VerticalAlignment="Center" HorizontalAlignment="Center"
+                 materialDesign:HintAssist.Hint="Введите кодовое слово"
+                 Text="{Binding Password, Mode=OneWayToSource}">
+        </TextBox>
+    </Grid>
+</Window>

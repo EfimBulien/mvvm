@@ -1,0 +1,35 @@
+﻿<Window x:Class="generator.TestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="TestWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="Выйти" VerticalAlignment="Top" Foreground="White" 
+                Command="{Binding ReturnCommand}"
+                Grid.Row="0" Grid.Column="0">
+        </Button>
+        <Button x:Name="EditTestButton" Content="Редактор теста" VerticalAlignment="Top" Foreground="White" 
+                Command="{Binding EditTestCommand}"
+                Grid.Row="0" Grid.Column="1">
+        </Button>
+        <Button Content="Пройти тест" VerticalAlignment="Top" Foreground="White" 
+                Command="{Binding PassTestCommand}"
+                Grid.Row="0" Grid.Column="2">
+        </Button>
+        <Frame x:Name="Frame" NavigationUIVisibility="Hidden" Margin="10" 
+               Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+               Content="{Binding CurrentPage}">
+        </Frame>
+    </Grid>
+</Window>

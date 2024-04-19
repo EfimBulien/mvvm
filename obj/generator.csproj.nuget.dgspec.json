@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\efimb\\Documents\\GitHub\\mvvm\\generator.csproj": {}
+    "C:\\Users\\efimb\\Downloads\\generator-main\\generator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\efimb\\Documents\\GitHub\\mvvm\\generator.csproj": {
+    "C:\\Users\\efimb\\Downloads\\generator-main\\generator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\efimb\\Documents\\GitHub\\mvvm\\generator.csproj",
+        "projectUniqueName": "C:\\Users\\efimb\\Downloads\\generator-main\\generator.csproj",
         "projectName": "generator",
-        "projectPath": "C:\\Users\\efimb\\Documents\\GitHub\\mvvm\\generator.csproj",
+        "projectPath": "C:\\Users\\efimb\\Downloads\\generator-main\\generator.csproj",
         "packagesPath": "C:\\Users\\efimb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\efimb\\Documents\\GitHub\\mvvm\\obj\\",
+        "outputPath": "C:\\Users\\efimb\\Downloads\\generator-main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\efimb\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,16 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.7.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
