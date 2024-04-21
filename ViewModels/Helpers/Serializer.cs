@@ -1,5 +1,6 @@
 ﻿using generator.Model;
 using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 using System.IO;
 
 namespace generator.Helpers;
@@ -13,9 +14,9 @@ public static class Serializer
         File.WriteAllText(FilePath, json);
     }
 
-    public static List<Test>? Deserialize()
+    public static ObservableCollection<Test>? Deserialize()
     {
         var json = File.ReadAllText(FilePath);
-        return JsonConvert.DeserializeObject<List<Test>>(json);
+        return JsonConvert.DeserializeObject<ObservableCollection<Test>>(json);
     }
 }

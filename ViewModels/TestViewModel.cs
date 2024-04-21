@@ -8,6 +8,17 @@ namespace generator.ViewModels
     internal class TestViewModel : BindingHelper
     {
         private readonly bool _isActiveEditButton;
+        private object _currentPage;
+
+        public object CurrentPage
+        {
+            get => _currentPage;
+            set
+            {
+                _currentPage = value;
+                OnPropertyChanged(nameof(CurrentPage));
+            }
+        }
 
         public TestViewModel(bool isActiveEditButton)
         {
@@ -21,18 +32,6 @@ namespace generator.ViewModels
         public ICommand PassTestCommand { get; }
         public ICommand EditTestCommand { get; }
 
-        private object _currentPage;
-
-        public object CurrentPage
-        {
-            get => _currentPage;
-            set
-            {
-                _currentPage = value;
-                OnPropertyChanged(nameof(CurrentPage));
-            }
-        }
-
         private void LoadPage()
         {
             CurrentPage = File.Exists("test.json") ? new PassTestPage() : new NoTestPage();
@@ -42,7 +41,7 @@ namespace generator.ViewModels
         {
             var mainWindow = new MainWindow();
             mainWindow.Show();
-            Application.Current.MainWindow.Close();
+            //Application.Current.MainWindow.Close();
         }
 
         private void PassTestCommandExecute(object obj)

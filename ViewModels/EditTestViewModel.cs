@@ -47,7 +47,7 @@ namespace generator.ViewModels
 
         private void AddNewTest()
         {
-            var newTest = new Test("", "", "", "", "", RightAnswer.FirstAnswer, new List<Test>());
+            var newTest = new Test("", "", "", "", "", RightAnswer.FirstAnswer, new ObservableCollection<Test>());
             Tests.Add(newTest);
             Serializer.Serialize(Tests.ToList());
         }

@@ -17,14 +17,14 @@
         <materialDesign:Card Grid.Row="0" Background="{DynamicResource PrimaryHueLightBrush}" 
                              Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" 
                              HorizontalAlignment="Center" VerticalAlignment="Top">
-            <TextBlock x:Name="NameTextBlock" FontSize="16" Padding="10"/>
+            <TextBlock Text="{Binding CurrentTest.Name}" FontSize="16" Padding="10"/>
         </materialDesign:Card>
-        <TextBlock x:Name="DescriptionTextBlock" HorizontalAlignment="Center" Margin="5" Grid.Row="2"/>
-        <TextBlock x:Name="AnswerBlock" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"/>
+        <TextBlock Text="{Binding CurrentTest.Description}" HorizontalAlignment="Center" Margin="5" Grid.Row="2"/>
+        <TextBlock Text="{Binding AnswerBlockText}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"/>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="3">
-            <Button x:Name="FirstButton" Foreground="White" Margin="5" Click="FirstButton_OnClick"/>
-            <Button x:Name="SecondButton" Foreground="White" Margin="5"  Click="SecondButton_OnClick"/>
-            <Button x:Name="ThirdButton" Foreground="White" Margin="5"  Click="ThirdButton_OnClick"/>
+            <Button Content="{Binding CurrentTest.FirstAnswer}" Foreground="White" Margin="5" Command="{Binding FirstAnswerCommand}"/>
+            <Button Content="{Binding CurrentTest.SecondAnswer}" Foreground="White" Margin="5"  Command="{Binding SecondAnswerCommand}"/>
+            <Button Content="{Binding CurrentTest.ThirdAnswer}" Foreground="White" Margin="5"  Command="{Binding ThirdAnswerCommand}"/>
         </StackPanel>
     </Grid>
 </Page>

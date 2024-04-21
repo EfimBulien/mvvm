@@ -1,4 +1,6 @@
-﻿namespace generator.Model;
+﻿using System.Collections.ObjectModel;
+
+namespace generator.Model;
 
 public enum RightAnswer
 {
@@ -8,8 +10,7 @@ public enum RightAnswer
 }
 public class Test
 {
-    public Test(string name, string description, string firstAnswer, string secondAnswer, string thirdAnswer,
-        RightAnswer rightAnswer, List<Test> test)
+    public Test(string name, string description, string firstAnswer, string secondAnswer, string thirdAnswer,RightAnswer rightAnswer, ObservableCollection<Test> test)
     {
         Name = name;
         Description = description;
