@@ -39,9 +39,7 @@ namespace generator.ViewModels
 
         private void ReturnCommandExecute(object obj)
         {
-            var mainWindow = new MainWindow();
-            mainWindow.Show();
-            //Application.Current.MainWindow.Close();
+            Application.Current.Shutdown();
         }
 
         private void PassTestCommandExecute(object obj)

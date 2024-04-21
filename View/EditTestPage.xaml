@@ -6,8 +6,16 @@
       mc:Ignorable="d"
       Title="EditTestPage" Height="Auto" Width="Auto">
     <Grid>
-        <DataGrid ItemsSource="{Binding Tests}" VerticalAlignment="Top" HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="TestGrid" ItemsSource="{Binding Tests}" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="0">
         </DataGrid>
-  
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1">
+            <Button x:Name="AddButton" Content="Добавить" Foreground="White" Command="{Binding SortingCommand}"/>
+            <Button x:Name="DelButton" Content="Удалить" Foreground="White" Command="{Binding DeleteCommand}"/>
+            <Button x:Name="UpButton" Content="Сохранить" Foreground="White" Command="{Binding UpdateCommand}"/>
+        </StackPanel>
     </Grid>
 </Page>

@@ -63,7 +63,7 @@ namespace generator {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/generator;V1.0.0.0;component/view/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/generator;component/view/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
