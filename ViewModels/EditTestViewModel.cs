@@ -1,5 +1,4 @@
 ﻿using System.Collections.ObjectModel;
-using System.Windows.Controls;
 using System.Windows.Input;
 using generator.Helpers;
 using generator.Model;
@@ -11,6 +10,18 @@ namespace generator.ViewModels
     {
         private ObservableCollection<Test> _tests;
         private Test _lastTest;
+        private Test _selectedItem;
+
+        public Test SelectedItem
+        {
+            get => _selectedItem;
+            set
+            {
+                _selectedItem = value;
+                OnPropertyChanged(nameof(SelectedItem));
+            }
+        }
+
         public ObservableCollection<Test> Tests
         {
             get => _tests;
@@ -51,14 +62,16 @@ namespace generator.ViewModels
 
         private void DeleteTest(object parameter)
         {
-            if (parameter is KeyEventArgs e)
+            if (parameter is Test test)
             {
-                if (e.Source is DataGrid dataGrid && dataGrid.SelectedItem is Test testToRemove)
-                {
-                    Tests.Remove(testToRemove);
-                    Serializer.Serialize(Tests.ToList());
-                }
+                Tests.Remove(test);
+                Serializer.Serialize(Tests.ToList());
             }
+        }
+
+        private void UpdateTests(object parameter)
+        {
+            Serializer.Serialize(Tests.ToList());
         }
 
         private void AddNewTest(object parameter)
@@ -73,11 +86,6 @@ namespace generator.ViewModels
                 Tests.Add(newTest);
                 Serializer.Serialize(Tests.ToList());
             }
-        }
-
-        private void UpdateTests(object parameter)
-        {
-            Serializer.Serialize(Tests.ToList());
         }
     }
 }

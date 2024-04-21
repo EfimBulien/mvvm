@@ -67,3 +67,4 @@ C:\Users\efimb\Downloads\generator-main\obj\Debug\net6.0-windows\View\EditTestPa
 C:\Users\efimb\Downloads\generator-main\obj\Debug\net6.0-windows\View\NoTestPage.g.cs
 C:\Users\efimb\Downloads\generator-main\obj\Debug\net6.0-windows\View\PassTestPage.g.cs
 C:\Users\efimb\Downloads\generator-main\obj\Debug\net6.0-windows\View\TestWindow.g.cs
+C:\Users\efimb\Downloads\generator-main\obj\Debug\net6.0-windows\generator_MarkupCompile.lref
